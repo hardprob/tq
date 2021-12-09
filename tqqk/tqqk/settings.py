@@ -66,10 +66,10 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    # 'tqqk.middlewares.TqqkDownloaderMiddleware': 543,
-#     'tqqk.middlewares.ProxyMiddleware': 301,
-# }
+DOWNLOADER_MIDDLEWARES = {
+   # 'tqqk.middlewares.TqqkDownloaderMiddleware': 543,
+    'tqqk.middlewares.ProxyMiddleware': 301,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -81,10 +81,11 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'tqqk.pipelines.MongoPipeline': 300,
+    # 'scrapy_redis.pipelines.RedisPipeline': 301
 }
 
 MONGO_URI='localhost:27017'
-MONGO_DATABASE='天气'
+MONGO_DATABASE='天气1'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -106,3 +107,7 @@ MONGO_DATABASE='天气'
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+REDIS_URL = 'redis://:123456a@127.0.0.1:6379'
