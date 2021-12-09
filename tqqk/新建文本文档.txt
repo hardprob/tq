@@ -1,0 +1,29 @@
+scrapy crawl tq
+scrapy shell https://tianqi.2345.com/china.htm
+
+response.xpath('/html/body/div[7]/div[2]/div[2]/ul/li/a/@href').getall()
+'/html/body/div[7]/div[2]/div[2]/ul/li/a/@href'
+'/html/body/div[7]/div[2]/div[2]/ul/li[32]/a'
+
+'/html/body/div[7]/div[2]/div[2]/div[1]/table/tbody/tr[10]/td[2]/a[7]'
+
+'/html/body/div[7]/div[2]/div[2]/div[1]/table/tbody/tr/td[2]/a'
+
+scrapy shell https://tianqi.2345.com/shanghai_dz/34.htm
+
+'/html/body/div[7]/div[2]/div[2]/div[1]/table/tbody/tr/td[2]/a[8]'
+'/html/body/div[7]/div[2]/div[2]/div[1]/table/tbody/tr/td[2]/a'
+response.xpath('/html/body/div[7]/div[2]/div[2]/div[1]/table/tbody//tr/@href').getall()
+response.css('.provincial-city-table ::attr(href)').getall()
+'/html/body/div[7]/div[2]/div[2]/div[1]/table/tbody/tr/td[2]/a[1]'
+'/html/body/div[7]/div[2]/div[2]/div[1]/table/tbody/tr/td[2]/a'
+
+
+scrapy shell https://tianqi.2345.com/Pc/GetHistory?areaInfo%5BareaId%5D=58362&areaInfo%5BareaType%5D=2&date%5Byear%5D=2012&date%5Bmonth%5D=12
+
+docker run --env DB_CONN=redis://:123456a@127.0.0.1:6379/0 -p 5010:5010 jhao104/proxy_pool
+
+python proxyPool.py schedule
+python proxyPool.py server
+
+72088
