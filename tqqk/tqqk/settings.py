@@ -73,8 +73,8 @@ ITEM_PIPELINES = {
     # 'scrapy_redis.pipelines.RedisPipeline': 301
 }
 
-MONGO_URI='localhost:27017'
-MONGO_DATABASE='天气1'
+MONGO_URI='172.22.224.1:27017'
+MONGO_DATABASE='天气2'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -99,4 +99,4 @@ MONGO_DATABASE='天气1'
 
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-REDIS_URL = 'redis://:123456a@127.0.0.1:6379'
+REDIS_URL = 'redis://:123456a@172.22.224.1:6379'

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dbfae498-58da-42c4-8017-cd7d7e2c694f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tqqk/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/tqqk/middlewares.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tqqk/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tqqk/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tqqk/spiders/tq.py" beforeDir="false" afterPath="$PROJECT_DIR$/tqqk/spiders/tq.py" afterDir="false" />
     </list>
@@ -27,8 +26,8 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../proxy_pool-master" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
