@@ -119,6 +119,7 @@ class ProxyMiddleware(object):
 
     def process_exception(self, request, exception, spider):
         print('删除的IP是：' + self.ip)
-        # requests.get("http://192.168.32.128:5010/delete/?proxy={}".format(self.ip))
-        self.ip = requests.get("http://127.0.0.1:5010/get/").json()['proxy']
+        requests.get("http://127.0.0.1:5010/delete/?proxy={}".format(self.ip))
+        # self.ip = requests.get("http://127.0.0.1:5010/get/").json()['proxy']
+
         return request

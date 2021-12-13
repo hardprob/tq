@@ -44,17 +44,6 @@ DEFAULT_REQUEST_HEADERS = {
     'Accept':' text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
     'Accept-Encoding':' gzip, deflate, br',
     'Accept-Language':' zh-CN,zh;q=0.9',
-    'Cache-Control':' no-cache',
-    'Connection':' keep-alive',
-    'Cookie':' positionCityID=70966; positionCityPinyin=yubei; BAIDU_SSP_lcr=https://www.baidu.com/link?url=-lYNaPhxFFecmfZVf3KIxTbYhF8N1CvmX3oyYqeChWy-IGuwL5CGjw1DzyQ2uBp6&wd=&eqid=d3a51bfb00002da80000000661b02e4b; Hm_lvt_a3f2879f6b3620a363bec646b7a8bcdd=1638939278; nykp_JD_211207_tianqi=8; nykp_JD_211207_tianqi_8=1; lastCityId=54511; lastProvinceId=12; lastCountyId=71446; lastCountyPinyin=xicheng; lastCountyTime=1638941170; Hm_lpvt_a3f2879f6b3620a363bec646b7a8bcdd=1638941171',
-    'Host':' tianqi.2345.com',
-    'Pragma':' no-cache',
-    'Referer':' https://tianqi.2345.com/yubei1d/70966.htm',
-    'Sec-Fetch-Dest':' document',
-    'Sec-Fetch-Mode':' navigate',
-    'Sec-Fetch-Site':' same-origin',
-    'Sec-Fetch-User':' ?1',
-    'Upgrade-Insecure-Requests':' 1',
     'User-Agent':' Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36',
 }
 
@@ -66,10 +55,10 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-   # 'tqqk.middlewares.TqqkDownloaderMiddleware': 543,
-    'tqqk.middlewares.ProxyMiddleware': 301,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#    # 'tqqk.middlewares.TqqkDownloaderMiddleware': 543,
+#     'tqqk.middlewares.ProxyMiddleware': 301,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
