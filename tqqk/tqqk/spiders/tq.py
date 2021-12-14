@@ -24,7 +24,7 @@ class TqSpider(scrapy.Spider):
                 a=str(str(url)[-9:-4])
                 b.append(a)
                 years=[i+2011 for i in range(11)]
-                months=[i+7 for i in range(1)]
+                months=[i+1 for i in range(12)]
                 for year in years:
                     for month in months:
                         data={
