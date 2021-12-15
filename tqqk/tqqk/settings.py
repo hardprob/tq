@@ -76,7 +76,7 @@ ITEM_PIPELINES = {
 }
 
 MONGO_URI='{}:27017'.format(ip)
-MONGO_DATABASE='天气3'
+MONGO_DATABASE='天气1'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
