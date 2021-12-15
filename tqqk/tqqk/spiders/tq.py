@@ -2,12 +2,17 @@ import scrapy
 import urllib.parse
 import json
 import re
-from tqqk.items import TqqkItem
 
+from redis import Redis
+
+from tqqk.items import TqqkItem
+from tqqk.settings import *
+import time
 class TqSpider(scrapy.Spider):
     name = 'tq'
     # allowed_domains = ['tianqi.2345.com/china.htm']
     start_urls = ['https://tianqi.2345.com/china.htm']
+    conn = Redis(host=ip, port=6379,password='123456a')
 
     def parse(self, response):
         urls=response.xpath('/html/body/div[7]/div[2]/div[2]/ul/li/a/@href').getall()
@@ -34,12 +39,22 @@ class TqSpider(scrapy.Spider):
                             'date[month]':month,
                         }
                         url='https://tianqi.2345.com/Pc/GetHistory?'+urllib.parse.urlencode(data)
-                        yield scrapy.Request(url,callback=self.parse_tq)
+                        # yield scrapy.Request(url, callback=self.parse_tq)
+
+                        ex = self.conn.sismember('tqurls1', url)
+                        if ex==1:
+                            # yield scrapy.Request(url, callback=self.parse_tq)
+                            pass
+                        else:
+                            yield scrapy.Request(url,callback=self.parse_tq)
+                            # pass
+
     def parse_tq(self,response):
         data=json.loads(response.text)['data']
         if len(data)<10:
             yield scrapy.Request(response.url,callback=self.parse_tq)
         else:
+            self.conn.sadd('tqurls1',response.url)
             data=re.findall('<tr>(.*?)</tr>',data,re.S)
             diqu=re.findall('.*?%5D=(.*?)&areaInfo.*',response.url)[0]
             for i in data:
@@ -59,6 +74,7 @@ class TqSpider(scrapy.Spider):
                     for field in items.fields:
                         items[field]=oneday[field]
                     yield items
+
 
 
 

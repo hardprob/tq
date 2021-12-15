@@ -6,6 +6,8 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import datetime
+
 import requests
 
 BOT_NAME = 'tqqk'
@@ -19,7 +21,7 @@ NEWSPIDER_MODULE = 'tqqk.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-
+ip='172.29.32.1'
 
 # PROXIES =requests.get("http://127.0.0.1:5010/get/").json()['proxy']
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -73,7 +75,7 @@ ITEM_PIPELINES = {
     # 'scrapy_redis.pipelines.RedisPipeline': 301
 }
 
-MONGO_URI='172.22.32.1:27017'
+MONGO_URI='{}:27017'.format(ip)
 MONGO_DATABASE='天气3'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -99,4 +101,11 @@ MONGO_DATABASE='天气3'
 
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-REDIS_URL = 'redis://:123456a@172.22.32.1:6379'
+REDIS_URL = 'redis://:123456a@{}:6379'.format(ip)
+
+today=datetime.datetime.now()
+logfile='tqlog{}-{}-{}.log'.format(today.year,today.month,today.day)
+LOG_LEVEL = "INFO"  # 输出级别
+LOG_FILE=logfile
+
+
